@@ -1,12 +1,450 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>H2M Integral Servicios</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>H2M | Obra y Mantenimiento Integral</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #202020;
+      line-height: 1.6;
+    }
+
+    /* PORTADA */
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(
+          110deg,
+          rgba(5, 28, 52, 0.97),
+          rgba(7, 47, 82, 0.88)
+        );
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .brand {
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 900;
+      letter-spacing: -7px;
+      line-height: 0.9;
+    }
+
+    .brand span {
+      color: #e97625;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      font-size: 1.05rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero-line {
+      width: 80px;
+      height: 5px;
+      background: #e97625;
+      margin: 32px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: 1.08;
+      max-width: 750px;
+    }
+
+    .hero p {
+      margin-top: 25px;
+      font-size: 1.15rem;
+      max-width: 620px;
+      color: #e8edf2;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 15px 28px;
+      background: #e97625;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+
+    /* SECCIONES */
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      color: #092f50;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 15px;
+    }
+
+    .orange-line {
+      width: 65px;
+      height: 4px;
+      background: #e97625;
+      margin-bottom: 35px;
+    }
+
+    .intro {
+      max-width: 850px;
+      font-size: 1.08rem;
+    }
+
+    /* CIFRAS */
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 55px;
+    }
+
+    .number {
+      background: white;
+      padding: 35px;
+      border-top: 5px solid #e97625;
+    }
+
+    .number strong {
+      display: block;
+      color: #092f50;
+      font-size: 2.5rem;
+    }
+
+    /* SERVICIOS */
+
+    .services-section {
+      background: #092f50;
+      color: white;
+    }
+
+    .services-section .section-title {
+      color: white;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .service {
+      border: 1px solid rgba(255,255,255,.22);
+      padding: 28px 20px;
+    }
+
+    .service h3 {
+      color: #e97625;
+      margin-bottom: 15px;
+    }
+
+    .service p {
+      color: #e2e7eb;
+      font-size: .95rem;
+    }
+
+    /* PROCESO */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 45px;
+      gap: 12px;
+    }
+
+    .step {
+      background: white;
+      padding: 25px 18px;
+      text-align: center;
+      border-bottom: 4px solid #e97625;
+      font-weight: bold;
+      color: #092f50;
+    }
+
+    /* PROYECTOS */
+
+    .projects {
+      background: #e9e9e9;
+    }
+
+    .project-box {
+      margin-top: 35px;
+      background: #092f50;
+      color: white;
+      padding: 45px;
+    }
+
+    .project-box p {
+      max-width: 700px;
+    }
+
+    /* CONTACTO */
+
+    .contact {
+      background: #092f50;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+    }
+
+    .contact p {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: #e2e7eb;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 850px) {
+
+      .numbers,
+      .services,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 7%;
+      }
+
+      .hero {
+        padding: 50px 7%;
+      }
+
+      .brand {
+        letter-spacing: -4px;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
-<h1>H2M Integral Servicios</h1>
-<p>Estamos preparando nuestro catálogo digital.</p>
-<p>Muy pronto encontrarás aquí todos nuestros proyectos y servicios.</p>
+
+  <!-- PORTADA -->
+
+  <header class="hero">
+    <div class="hero-content">
+
+      <div class="brand">H<span>2</span>M</div>
+
+      <div class="subtitle">
+        Obra y Mantenimiento Integral
+      </div>
+
+      <div class="hero-line"></div>
+
+      <h1>
+        Un solo proveedor.<br>
+        Todas las soluciones.
+      </h1>
+
+      <p>
+        Integramos diferentes especialidades de obra y mantenimiento
+        para resolver desde una reparación puntual hasta un proyecto completo.
+      </p>
+
+      <a class="button" href="#contacto">
+        Solicitar visita técnica
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- POR QUÉ H2M -->
+
+  <section>
+
+    <h2 class="section-title">¿Por qué H2M?</h2>
+    <div class="orange-line"></div>
+
+    <p class="intro">
+      En H2M reunimos diferentes especialidades para que nuestros
+      clientes encuentren un solo proveedor capaz de resolver desde
+      una reparación puntual hasta un proyecto completo.
+      Coordinamos cada especialidad para entregar soluciones completas,
+      reducir tiempos y simplificar la operación de nuestros clientes.
+    </p>
+
+    <div class="numbers">
+
+      <div class="number">
+        <strong>+6</strong>
+        años de experiencia
+      </div>
+
+      <div class="number">
+        <strong>+80</strong>
+        proyectos entregados
+      </div>
+
+      <div class="number">
+        <strong>+30</strong>
+        clientes atendidos
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICIOS -->
+
+  <section class="services-section">
+
+    <h2 class="section-title">Nuestros servicios</h2>
+    <div class="orange-line"></div>
+
+    <p>Un solo proveedor. Todas las soluciones.</p>
+
+    <div class="services">
+
+      <div class="service">
+        <h3>Obra civil</h3>
+        <p>
+          Albañilerías<br>
+          Trabajos en altura
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Instalaciones</h3>
+        <p>
+          Hidrosanitarias<br>
+          Eléctricas<br>
+          Aire acondicionado
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Acabados</h3>
+        <p>
+          Pintura · Pisos · Impermeabilización<br>
+          Tablaroca<br>
+          Cancelería y aluminio<br>
+          Carpintería
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Mantenimiento</h3>
+        <p>
+          Mantenimiento general<br>
+          Limpieza fina<br>
+          Herrería y estructura metálica
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Trámites</h3>
+        <p>
+          Trámites y gestorías
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CÓMO TRABAJAMOS -->
+
+  <section>
+
+    <h2 class="section-title">¿Cómo trabajamos?</h2>
+    <div class="orange-line"></div>
+
+    <p class="intro">
+      Integramos cada servicio de obra y mantenimiento en un solo equipo,
+      optimizando tiempos, reduciendo costos y entregando resultados
+      con calidad, compromiso y confianza.
+    </p>
+
+    <div class="process">
+      <div class="step">01<br>Visita técnica</div>
+      <div class="step">02<br>Diagnóstico</div>
+      <div class="step">03<br>Cotización</div>
+      <div class="step">04<br>Ejecución</div>
+      <div class="step">05<br>Entrega y seguimiento</div>
+    </div>
+
+  </section>
+
+
+  <!-- PROYECTOS -->
+
+  <section class="projects">
+
+    <h2 class="section-title">Nuestros proyectos</h2>
+    <div class="orange-line"></div>
+
+    <p class="intro">
+      Un vistazo a nuestro trabajo.
+    </p>
+
+    <div class="project-box">
+      <p>
+        Obra civil, instalaciones, acabados y mantenimiento
+        ejecutados para proyectos comerciales y particulares.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- CONTACTO -->
+
+  <section class="contact" id="contacto">
+
+    <h2>Hablemos de tu proyecto</h2>
+
+    <p>
+      Convirtamos tu proyecto en un trabajo bien hecho desde la primera
+      intervención. Solicita una visita técnica y recibe una propuesta
+      a la medida.
+    </p>
+
+    <a
+      class="button"
+      href="https://wa.me/523333921196"
+      target="_blank"
+      rel="noopener">
+      Contactar por WhatsApp
+    </a>
+
+  </section>
+
 </body>
 </html>
