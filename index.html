@@ -211,23 +211,36 @@
     background: #e97625;
 }
 
-    /* PROCESO */
+   /* PROCESO */
 
-    .process {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      margin-top: 45px;
-      gap: 12px;
-    }
+.process {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+    margin-top: 55px;
+    position: relative;
+}
 
-    .step {
-      background: white;
-      padding: 25px 18px;
-      text-align: center;
-      border-bottom: 4px solid #e97625;
-      font-weight: bold;
-      color: #092f50;
-    }
+.step {
+    position: relative;
+    background: transparent;
+    padding: 25px 18px 28px 0;
+    text-align: left;
+    color: #092f50;
+    font-weight: 600;
+    border-bottom: 2px solid #e97625;
+    min-height: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.step::first-line {
+    color: #e97625;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.8;
+}
 
     /* PROYECTOS */
 
